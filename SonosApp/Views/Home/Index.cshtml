@@ -1,0 +1,52 @@
+﻿
+<div ng-app="sonosApp" ng-controller="homeController" ng-cloak>
+
+    <div ng-if="Offline">
+        server offline
+    </div>
+
+    <div ng-if="!Offline">
+        <div class="row">
+            <div ng-if="Mute">
+                <div class="col-sm-6" id="playback-mute">
+                    <p>Volume: Muted</p>
+                </div>
+            </div>
+
+            <div ng-if="!Mute">
+                <div class="col-sm-6" id="playback-volume">
+                    <p>Volume: {{Volume}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div ng-if="PlaybackState == 'PLAYING'">
+                <div class="col-sm-12 col-md-6 col-lg-3" id="current-track">
+                    <h3>Now Playing</h3>
+                    <p>Artist: {{CurrentTrack.artist}}</p>
+                    <p>Track: {{CurrentTrack.title}}</p>
+                    <p>Album: {{CurrentTrack.album}}</p>
+                    <img class="img-thumbnail" src="{{CurrentTrack.absoluteAlbumArtUri}}" />
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-3" id="next-track">
+                    <h3>Up Next</h3>
+                    <p>Artist: {{NextTrack.artist}}</p>
+                    <p>Track: {{NextTrack.title}}</p>
+                    <p>Album: {{NextTrack.album}}</p>
+                    <img class="img-thumbnail" src="{{NextTrack.absoluteAlbumArtUri}}" />
+                </div>
+            </div>
+
+            <div ng-if="PlaybackState != 'PLAYING'">
+                <div class="col-sm-6" id="playback-paused">
+                    <p>{{PlaybackState}}</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
