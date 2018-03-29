@@ -83,7 +83,7 @@ var requestHandler = function (req, res) {
   }).resume();
 };
 
-var server;
+var server; 
 
 if (settings.https) {
   var options = {};
