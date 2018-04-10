@@ -81,7 +81,7 @@
         <button type="button" ng-click="showQueue()">Get Queue</button>
     </div>*@
     
-    <table class="table">
+    <table class="table table-sm">
         <thead>
         <tr>
             <th scope="col">Track</th>
@@ -90,7 +90,7 @@
         </tr>
         </thead>
         <tbody>
-            <tr ng-class="{'table-primary': item.title == CurrentTrack403.title}" ng-repeat="item in Queue">
+            <tr ng-class="{'table-primary ': item.title == CurrentTrack403.title}" ng-repeat="item in Queue">
                 <td>{{item.title}}</td>
                 <td>{{item.artist}}</td>
                 <td>{{item.album}}</td>
