@@ -35,16 +35,12 @@
                     <p>Album: {{CurrentTrack403.album}}</p>
                     <img class="img-thumbnail" src="{{CurrentTrack403.absoluteAlbumArtUri}}"/>
                     <h4>Up next: {{NextTrack403.artist}} : {{NextTrack403.title}}</h4>
-
                 </div>
 
                 <div ng-if="PlaybackState403 != 'PLAYING'">
                     <p>{{PlaybackState403}}</p>
                 </div>
             </div>
-
-
-
 
             <div class="col-sm-12 col-md-6 col-lg-3" id="next-track" ng-if="CurrentTrack404.type != 'radio'">
                 
@@ -75,13 +71,13 @@
             </div>
         </div>*@
     
-    <hr/>
+    @*<hr/>*@
 
     @*<div class="row">
         <button type="button" ng-click="showQueue()">Get Queue</button>
     </div>*@
     
-    <table class="table table-sm">
+    @*<table class="table table-sm">
         <thead>
         <tr>
             <th scope="col">Track</th>
@@ -96,6 +92,6 @@
                 <td>{{item.album}}</td>
             </tr>
         </tbody>
-    </table>
+    </table>*@
 
 </div>
