@@ -6,7 +6,7 @@
             //403
             $http({
                 method: 'GET',
-                url: 'http://localhost:5005/studio%20403/state'
+                url: 'http://192.168.1.125:5005/studio%20403/state'
             }).then(function successCallback(response) {
                 $scope.CurrentTrack403 = response.data.currentTrack;
                 $scope.NextTrack403 = response.data.nextTrack; // TODO: handle no next track
@@ -21,7 +21,7 @@
             //404
             $http({
                 method: 'GET',
-                url: 'http://localhost:5005/studio%20404/state'
+                url: 'http://192.168.1.125:5005/studio%20404/state'
             }).then(function successCallback(response) {
                 $scope.CurrentTrack404 = response.data.currentTrack;
                 $scope.NextTrack404 = response.data.nextTrack; // TODO: handle no next track
@@ -34,15 +34,15 @@
             });
 
             ////403 Queue
-            //$http({
-            //    method: 'GET',
-            //    url: 'http://localhost:5005/studio%20403/queue/10'
-            //}).then(function successCallback(response) {
-            //    $scope.Queue = response.data;
-            //}, function errorCallback(response) {
-            //    console.log(response);
-            //    $scope.Offline = true;
-            //});
+            $http({
+                method: 'GET',
+                url: 'http://192.168.1.125:5005/studio%20403/queue/10'
+            }).then(function successCallback(response) {
+                $scope.Queue = response.data;
+            }, function errorCallback(response) {
+                console.log(response);
+                $scope.Offline = true;
+            });
 
             setTimeout(doPoll, 5000);
 
@@ -85,7 +85,7 @@
 
         //    $http({
         //        method: 'GET',
-        //        url: 'http://localhost:5005/studio%20403/queue'
+        //        url: 'http://192.168.1.125:5005/studio%20403/queue'
         //    }).then(function successCallback(response) {
         //        $scope.Queue = response.data;
         //    }, function errorCallback(response) {
@@ -94,20 +94,6 @@
         //    });
 
         //}
-
-        //$scope.SaySpeech = function (text) {
-
-        //    $http.post('http://localhost:5005/studio%20403/say/' + text).then(successCallback, errorCallback);
-
-        //    function successCallback(response) {
-        //        console.log(response);
-        //    }
-
-        //    function errorCallback(response) {
-        //        console.log(response);
-        //    }
-
-        //};
 
         doPoll();
 
